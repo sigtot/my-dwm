@@ -59,6 +59,10 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *togglemutecmd[] = { "togglemute", NULL };
+static const char *voldowncmd[] = { "voldown", NULL };
+static const char *volupcmd[] = { "volup", NULL };
+static const char *networkcmd[] = { "unity-control-center", "network", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -85,6 +89,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_F1,     spawn,          {.v = togglemutecmd } },
+	{ MODKEY,                       XK_F2,     spawn,          {.v = voldowncmd } },
+	{ MODKEY,                       XK_F3,     spawn,          {.v = volupcmd } },
+	{ MODKEY,                       XK_n,      spawn,          {.v = networkcmd } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
