@@ -62,7 +62,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *togglemutecmd[] = { "togglemute", NULL };
 static const char *voldowncmd[] = { "voldown", NULL };
 static const char *volupcmd[] = { "volup", NULL };
-static const char *networkcmd[] = { "unity-control-center", "network", NULL };
+static const char *networkcmd[] = { "/home/sigtot/bin/start-control-center", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
